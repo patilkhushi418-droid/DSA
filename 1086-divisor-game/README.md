@@ -1,36 +1,14 @@
-<h2><a href="https://leetcode.com/problems/divisor-game">Divisor Game</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Alice and Bob take turns playing a game, with Alice starting first.</p>
+## Approach
 
-<p>Initially, there is a number <code>n</code> on the chalkboard. On each player&#39;s turn, that player makes a move consisting of:</p>
+The key observation is that Alice wins whenever `n` is even.
 
-<ul>
-	<li>Choosing any integer <code>x</code> with <code>0 &lt; x &lt; n</code> and <code>n % x == 0</code>.</li>
-	<li>Replacing the number <code>n</code> on the chalkboard with <code>n - x</code>.</li>
-</ul>
+If `n` is even, Alice can choose `1`, making the remaining number odd. Whatever divisor Bob chooses next, Alice can continue with the corresponding strategy.
 
-<p>Also, if a player cannot make a move, they lose the game.</p>
+If `n` is odd, every divisor of `n` is odd, so after Alice's move the remaining number becomes even, putting Bob in the winning position.
 
-<p>Return <code>true</code> <em>if and only if Alice wins the game, assuming both players play optimally</em>.</p>
+Therefore, we simply check whether `n` is even.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+## Complexity
 
-<pre>
-<strong>Input:</strong> n = 2
-<strong>Output:</strong> true
-<strong>Explanation:</strong> Alice chooses 1, and Bob has no more moves.
-</pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> n = 3
-<strong>Output:</strong> false
-<strong>Explanation:</strong> Alice chooses 1, Bob chooses 1, and Alice has no more moves.
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= n &lt;= 1000</code></li>
-</ul>
+- **Time Complexity:** O(1)
+- **Space Complexity:** O(1)
