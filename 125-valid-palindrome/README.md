@@ -1,35 +1,19 @@
-<h2><a href="https://leetcode.com/problems/valid-palindrome">Valid Palindrome</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>A phrase is a <strong>palindrome</strong> if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>
+## Approach
 
-<p>Given a string <code>s</code>, return <code>true</code><em> if it is a <strong>palindrome</strong>, or </em><code>false</code><em> otherwise</em>.</p>
+We use two pointers, `left` and `right`, starting from the beginning and end of the string.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+We skip characters that are not alphanumeric using `isalnum()`.
 
-<pre>
-<strong>Input:</strong> s = &quot;A man, a plan, a canal: Panama&quot;
-<strong>Output:</strong> true
-<strong>Explanation:</strong> &quot;amanaplanacanalpanama&quot; is a palindrome.
-</pre>
+For comparison, both characters are converted to lowercase using `tolower()`.
 
-<p><strong class="example">Example 2:</strong></p>
+If the characters are different, the string is not a palindrome, so we return `false`.
 
-<pre>
-<strong>Input:</strong> s = &quot;race a car&quot;
-<strong>Output:</strong> false
-<strong>Explanation:</strong> &quot;raceacar&quot; is not a palindrome.
-</pre>
+If all valid characters match while the two pointers move toward each other, the string is a palindrome.
 
-<p><strong class="example">Example 3:</strong></p>
+## Complexity
 
-<pre>
-<strong>Input:</strong> s = &quot; &quot;
-<strong>Output:</strong> true
-<strong>Explanation:</strong> s is an empty string &quot;&quot; after removing non-alphanumeric characters.
-Since an empty string reads the same forward and backward, it is a palindrome.
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+- Time Complexity: O(n)
+- Space Complexity: O(1)
 
 <ul>
 	<li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>
