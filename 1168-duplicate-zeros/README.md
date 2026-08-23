@@ -1,28 +1,14 @@
-<h2><a href="https://leetcode.com/problems/duplicate-zeros">Duplicate Zeros</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given a fixed-length integer array <code>arr</code>, duplicate each occurrence of zero, shifting the remaining elements to the right.</p>
+## Approach
 
-<p><strong>Note</strong> that elements beyond the length of the original array are not written. Do the above modifications to the input array in place and do not return anything.</p>
+We traverse the array from left to right.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Whenever we find a `0`, we shift all elements after it one position to the right and place another `0` immediately after it.
 
-<pre>
-<strong>Input:</strong> arr = [1,0,2,3,0,4,5,0]
-<strong>Output:</strong> [1,0,0,2,3,0,0,4]
-<strong>Explanation:</strong> After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
-</pre>
+Since the array size must remain unchanged, elements that move beyond the last position are discarded.
 
-<p><strong class="example">Example 2:</strong></p>
+After duplicating a zero, we skip the newly inserted zero to avoid processing it again.
 
-<pre>
-<strong>Input:</strong> arr = [1,2,3]
-<strong>Output:</strong> [1,2,3]
-<strong>Explanation:</strong> After calling your function, the input array is modified to: [1,2,3]
-</pre>
+##  Complexity
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= arr.length &lt;= 10<sup>4</sup></code></li>
-	<li><code>0 &lt;= arr[i] &lt;= 9</code></li>
-</ul>
+- **Time Complexity:** O(n²)
+- **Space Complexity:** O(1)
