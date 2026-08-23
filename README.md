@@ -26,7 +26,6 @@ Each problem is organized into its own folder containing the solution and relate
 ## 💻 Languages
 
 - C++
-- Java
 
 ## 📈 My Progress
 
