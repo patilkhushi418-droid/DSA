@@ -14,16 +14,16 @@ public:
     }
 
     bool isHappy(int n) {
-        unordered_set<int> s;
 
-        while (n != 1) {
-            if (s.find(n) != s.end())
-                return false;
+        int slow = n;
+        int fast = n;
 
-            s.insert(n);
-            n = sumSquare(n);
-        }
+        do {
+            slow = sumSquare(slow);
+            fast = sumSquare(sumSquare(fast));
 
-        return true;
+        } while (slow != fast);
+
+        return slow == 1;
     }
 };
